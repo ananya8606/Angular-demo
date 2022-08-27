@@ -1,0 +1,19 @@
+<form #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)"> 
+    <input type="text" name="username" placeholder="username" ngModel> 
+    <input type="number" name="userage" placeholder="userage" ngModel> 
+    <br/> 
+    <br/> 
+    <input type="submit" value="submit"> 
+ </form>
+ <p> Username is: {{userName.value.username}}  and age is  {{userName.value.userage}}  </p>
+ <h1>ReactiveForms</h1>
+ <div> 
+    <form [formGroup]="formdata" (ngSubmit)="onClickSub(formdata.value)" > 
+       <input type= "text"  name="userName" placeholder="userName" formControlName = "userName" > 
+       <input type= "number"  name="userAge" placeholder="userAge" formControlName = "userAge" > 
+       <br/>
+       <br/>
+       <input type="submit"  value="Click here"> 
+    </form>
+ </div> 
+ <p> Username is: {{formdata.value.userName}}  and age is  {{formdata.value.userAge}} </p>

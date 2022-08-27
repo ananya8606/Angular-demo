@@ -1,0 +1,29 @@
+<p>directivedemo works!</p>
+<h1>ngIfelse</h1>
+<button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>  
+    show = {{show}}  
+    <br>  
+    <div *ngIf="show; else elseBlock">Text to show</div>  
+    <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>  
+    <h1>ngSwitch</h1>
+    <select [(ngModel)]="selectedValue">  
+        <option *ngFor="let item of items;" [value]="item.name">{{item.name}}</option>  
+    </select>  
+    <div class='row' [ngSwitch]="selectedValue">  
+        <div *ngSwitchCase="'One'">One is Pressed</div>  
+        <div *ngSwitchCase="'Two'">Two is Selected</div>  
+        <div *ngSwitchDefault>Default Option</div>  
+    </div>   
+    <h1>ngStyle</h1>
+    <p [ngStyle]="{'color': 'blue', 'font-size': '14px'}"> 
+        paragraph style is applied using ngStyle 
+     </p>
+     <h1>ngClass</h1>
+     <div class="container"> 
+        <br/> 
+        <div *ngFor="let user of users" [ngClass]="{ 
+           'highlight':user.userName === 'User1' 
+        }"> 
+           {{ user.userName }} 
+        </div> 
+     </div>
